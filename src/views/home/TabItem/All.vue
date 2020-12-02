@@ -1,7 +1,7 @@
 <template>
   <div style="overflow-y: scroll; height: 600px">
     <div style="position: fixed; right: 20px; top: 200px">
-      <div style="background-color: forestgreen; width: 480px; height: 240px; float: left" @click="dialogFormVisible = true">
+      <div style="background-color: forestgreen; width: 480px; height: 240px; float: left" @click="drawer = true">
         <div style="padding-left: 15px; padding-top: 10px">
           <div style="font-size: 20px; color: #888888; float: left">事件摘要：</div>
           <div style="font-size: 20px; color: black; float: left">测试内容</div>
@@ -167,11 +167,17 @@
     </div>
 
     <div>
-      <el-dialog title="A市局下发的通报" :visible.sync="dialogFormVisible" width="450px" top="0">
-        <div style=" height: 18px; line-height: 18px; font-size: 18px; margin-top: -30px">
+      <el-drawer
+        append-to-body="false"
+        title="A市局下发的通报"
+        :visible.sync="drawer"
+        :direction="direction"
+        size="1"
+        :before-close="handleClose">
+        <div style=" height: 18px; line-height: 18px; font-size: 18px; margin-top: -20px; margin-left: 20px">
           等待A县局处理
         </div>
-        <div style="width: 480px; height: 310px; float: left; border-bottom: 1px dotted #888888; border-top: 1px dotted #888888">
+        <div style=" margin-top: 10px; width: 480px; height: 310px; float: left; border-bottom: 1px dotted #888888; border-top: 1px dotted #888888">
           <div style="padding-left: 15px; padding-top: 10px">
             <div style="font-size: 20px; color: #888888; float: left">信息编号：</div>
             <div style="font-size: 20px; color: #888888; float: left">312464846</div>
@@ -222,12 +228,12 @@
 
         </div>
         <div style="clear: both"></div>
-        <div style="margin-top: 10px; font-size: 20px; font-weight: bold">
+        <div style=" margin-left: 20px; margin-top: 10px; font-size: 20px">
           需求：需于2020-8-13 18:00:00前反馈
         </div>
         <div style="background-color: gainsboro; height: 600px; padding-top: 10px; margin-top: 10px">
-          <div style="border-radius: 20px; background-color: white; width: 390px; height: 590px; margin-left: 10px;">
-            <div style="height: 550px; margin-left: 20px; padding-top: 20px">
+          <div style="margin-left: 30px; border-radius: 20px; background-color: white; width: 420px; height: 590px;">
+            <div style="height: 550px; margin-left: 20px; padding-top: 20px; overflow: scroll">
               <el-steps direction="vertical" :active="6">
                 <el-step title="下发通报" icon="el-icon-picture" description="A市局">
                 </el-step>
@@ -244,6 +250,10 @@
                 <el-step title="丙：如拟" icon="el-icon-picture">
                 </el-step>
                 <el-step icon="el-icon-picture" description="2个单位"></el-step>
+                <el-step title="下发通报" icon="el-icon-picture" description="A市局">
+                </el-step>
+                <el-step title="已签收" icon="el-icon-picture" description="本单位">
+                </el-step>
               </el-steps>
             </div>
           </div>
@@ -252,7 +262,7 @@
           <el-button @click="openA">处理</el-button>
           <el-button type="primary" @click="openB">反馈</el-button>
         </div>
-      </el-dialog>
+      </el-drawer>
     </div>
   </div>
 </template>
@@ -262,6 +272,8 @@ export default {
   name: "All",
   data() {
     return {
+      drawer: false,
+      direction: 'rtl',
       dialogFormVisible: false
     };
   },
@@ -285,6 +297,13 @@ export default {
       });
 
       this.dialogFormVisible = false
+    },
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done();
+        })
+        .catch(_ => {});
     }
   }
 }

@@ -29,7 +29,7 @@
     </div>
 
     <div>
-      <el-dialog title="新建信息" :visible.sync="dialogFormVisible" width="450px" top="0" fullscreen="true">
+      <el-dialog title="新建信息" :visible.sync="dialogFormVisible" width="450px" top="0" fullscreen="true" append-to-body="false">
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
 
           <el-form-item label="信息类型" prop="region">

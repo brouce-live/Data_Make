@@ -1,5 +1,5 @@
 <template>
-  <h1>我是待开发</h1>
+  <h1>我是完成</h1>
 </template>
 
 <script>

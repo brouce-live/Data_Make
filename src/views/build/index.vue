@@ -6,41 +6,36 @@
       </div>
       <div style="">
         <img slot="item-icon" src="../../assets/img/tabbar/poss.svg" alt="" style="width: 40px; height: 40px; margin-left: 5px; margin-top: 5px; float: left">
-        <router-link to="/home/news" style="float: left; padding-top: 10px; padding-left: 6px">
+        <router-link to="/information" style="float: left; padding-top: 10px; padding-left: 6px">
           <el-badge is-dot class="item">
-            <span style="height: 30px; line-height: 30px; font-size: 20px;">A市局</span>
+            <span style="height: 30px; line-height: 30px; font-size: 20px;">发起信息</span>
           </el-badge>
         </router-link>
-        <span style="float: left; padding-left: 120px; padding-top: 10px">12:00</span>
         <div style="clear: both"></div>
       </div>
       <div style="">
         <img slot="item-icon" src="../../assets/img/tabbar/poss.svg" alt="" style="width: 40px; height: 40px; margin-left: 5px; margin-top: 5px; float: left">
-        <router-link to="/home/message" style="float: left; padding-top: 10px; padding-left: 6px">
+        <router-link to="/notice" style="float: left; padding-top: 10px; padding-left: 6px">
           <el-badge :value="200" :max="99" class="item">
-            <span style="height: 30px; line-height: 30px; font-size: 20px;">X县局</span>
+            <span style="height: 30px; line-height: 30px; font-size: 20px;">发起通报</span>
           </el-badge>
         </router-link>
-        <span style="float: left; padding-left: 130px; padding-top: 10px">昨天</span>
         <div style="clear: both"></div>
       </div>
       <div style="">
-
         <img slot="item-icon" src="../../assets/img/tabbar/poss.svg" alt="" style="width: 40px; height: 40px; margin-left: 5px; margin-top: 5px; float: left">
-        <router-link to="/home/test1" style="float: left; padding-top: 10px; padding-left: 6px">
+        <router-link to="/instruct" style="float: left; padding-top: 10px; padding-left: 6px">
           <el-badge :value="12" class="item">
-            <span style="height: 30px; line-height: 30px; font-size: 20px">Y县局</span>
+            <span style="height: 30px; line-height: 30px; font-size: 20px">发起指令</span>
           </el-badge>
         </router-link>
-        <span style="float: left; padding-left: 105px; padding-top: 10px">9月20日</span>
         <div style="clear: both"></div>
       </div>
       <div style="">
         <img slot="item-icon" src="../../assets/img/tabbar/poss.svg" alt="" style="width: 40px; height: 40px; margin-left: 5px; margin-top: 5px; float: left">
-        <router-link to="/home/news" style="float: left; padding-top: 10px; padding-left: 6px">
-          <span style="height: 30px; line-height: 30px; font-size: 20px; color: black">W县局</span>
+        <router-link to="/account" style="float: left; padding-top: 10px; padding-left: 6px">
+          <span style="height: 30px; line-height: 30px; font-size: 20px;">发起台账</span>
         </router-link>
-        <span style="float: left; padding-left: 95px; padding-top: 10px">9月19日</span>
         <div style="clear: both"></div>
       </div>
     </div>

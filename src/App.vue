@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <Title />
     <div style="display: flex; flex-direction: row">
-      <div style="flex: 1">
+      <div style="width: 7%">
         <main-tab-bar></main-tab-bar>
       </div>
-      <div style="flex: 10">
+      <div style="width: 93%">
         <keep-alive>
           <router-view />
         </keep-alive>
